@@ -14,6 +14,9 @@ public interface EstudianteInterfaz {
     Call<List<Estudiante>> getAll();
     @POST("agregar")
     Call<Estudiante> create(@Body EstudianteDto dto);
-
+    @PUT("{/id}")
+    Call<Estudiante> edit(@Path("id") int id, @Body EstudianteDto dto);
+    @DELETE("/{id}")
+    Call<Estudiante> delete(@Path("id") int id);
 
 }
